@@ -107,17 +107,17 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:clamp(4p
       <div class="mod">
         <label for="sliderA">Amplitude</label>
         <input type="range" id="sliderA" min="0.2" max="2.5" step="0.05" value="1">
-        <div class="readout" id="valA">a = 1</div>
+        <div class="readout" id="valA">1</div>
       </div>
       <div class="mod teal">
         <label for="sliderT">Periodenlänge</label>
         <input type="range" id="sliderT" min="10" max="80" step="1" value="40">
-        <div class="readout" id="valT">T = 2π</div>
+        <div class="readout" id="valT">2π</div>
       </div>
       <div class="mod">
         <label for="sliderD">Mittellinie (Ruhelage)</label>
         <input type="range" id="sliderD" min="-2" max="2" step="0.1" value="0">
-        <div class="readout" id="valD">d = 0</div>
+        <div class="readout" id="valD">0</div>
       </div>
     </div>
 
@@ -174,9 +174,9 @@ function update(){
   A = parseFloat(sA.value);
   T = tFromSlider(parseFloat(sT.value));
   D = parseFloat(sD.value);
-  valA.textContent = 'A = ' + A.toFixed(1);
-  valT.textContent = 'T = ' + fmtPi(T);
-  valD.textContent = 'd = ' + D.toFixed(1);
+  valA.textContent = A.toFixed(1);
+  valT.textContent = fmtPi(T);
+  valD.textContent = D.toFixed(1);
   resizeCanvas();
   updateAudio();
 }
