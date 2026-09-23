@@ -257,7 +257,7 @@ function currentAudioValues(){
   const freq = Math.max(80, Math.min(1200, baseFreq * (2*Math.PI/T)));
   // Die Lautsprecher des iPads sind deutlich leiser als Kopfhörer.
   // 75 % interne Lautstärke bleibt sicher unterhalb der Vollaussteuerung.
-  const vol = Math.max(0.08, Math.min(0.8, A/2.5)) * 0.2;
+  const vol = Math.max(0.08, Math.min(0.5, A/5)) * 0.75;
   return {freq, vol};
 }
 
