@@ -105,20 +105,17 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:clamp(4p
   <div class="panel-strip">
     <div class="sliders">
       <div class="mod">
-        <label for="sliderA">Ausschlag (Amplitude)</label>
-        <span class="hint">Wie hoch und tief die Welle ausschlägt</span>
+        <label for="sliderA">Amplitude</label>
         <input type="range" id="sliderA" min="0.2" max="2.5" step="0.05" value="1">
-        <div class="readout" id="valA">A = 1</div>
+        <div class="readout" id="valA">a = 1</div>
       </div>
       <div class="mod teal">
         <label for="sliderT">Periodenlänge</label>
-        <span class="hint">Nach dieser Strecke wiederholt sich die Welle</span>
         <input type="range" id="sliderT" min="10" max="80" step="1" value="40">
         <div class="readout" id="valT">T = 2π</div>
       </div>
       <div class="mod">
         <label for="sliderD">Mittellinie (Ruhelage)</label>
-        <span class="hint">Verschiebt die Welle nach oben oder unten</span>
         <input type="range" id="sliderD" min="-2" max="2" step="0.1" value="0">
         <div class="readout" id="valD">d = 0</div>
       </div>
@@ -129,8 +126,8 @@ footer{text-align:center;color:var(--muted);font-size:.78rem;margin-top:clamp(4p
     </div>
 
     <div class="toggles">
-      <label><input type="checkbox" id="chkPeriod"> Eine Periode markieren</label>
-      <label><input type="checkbox" id="chkNodes"> Wendepunkte anzeigen</label>
+      <label><input type="checkbox" id="chkPeriod"> Eine Schwingung markieren</label>
+      <label><input type="checkbox" id="chkNodes"> Mittellinie anzeigen</label>
     </div>
 
     <div class="controls-row">
@@ -225,7 +222,7 @@ function draw(){
     ctx.beginPath(); ctx.moveTo(marginL, yToPx(D)); ctx.lineTo(w-marginR, yToPx(D)); ctx.stroke();
     ctx.setLineDash([]);
     ctx.fillStyle='#e2a23b'; ctx.font='22px -apple-system,sans-serif'; ctx.textAlign='left';
-    ctx.fillText('Ruhelage', marginL+10, yToPx(D)-12);
+    ctx.fillText('Mittellinie', marginL+10, yToPx(D)-12);
     ctx.fillStyle='#e2a23b';
     for(let k=-8;k<=8;k++){
       const x = k*T/2;
